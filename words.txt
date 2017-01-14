@@ -1,0 +1,107 @@
+*1*
+Primary
+Secondary
+Backup
+Long range
+Short range
+Cryogenic
+Krell
+Yelekreb Systems
+Theoretical
+Maximum
+Minimum
+Passive
+Background
+Distributed
+Restricted
+Clarke
+Solar
+Lunar
+CPU
+Heuristic
+Prior
+Main series
+Engineering
+External
+Internal
+Station
+NavCom
+ATG
+Logistical
+Elppa
+Anticipated
+Ancillary
+*2*
+power systems
+navigation
+generator
+reception
+antimatter
+neutron flux
+positron flux
+magnetic flux
+neutrino level
+boson collision
+shielding degradation
+ionization
+greenhouse effect
+spin rate
+system
+phase
+sales
+back-order
+market
+component
+paradigm
+communication
+transmission
+propulsion
+life support
+atmosphere
+biosphere
+infosphere
+data rate
+memory utilization
+APGAR
+containment
+compute cycles
+maintenance
+laser alignment
+docking module
+*3*
+level
+projection
+alignment
+report
+correction
+analysis
+feedback
+limits
+history
+graph
+results
+*4*
+(revs x 1000)
+(20%)
+(10%)
+(5%)
+(jgl/mrl)
+(h/m)
+(mmt x xrt)
+(kj)
+(erc + sxs)
+(level -1)
+(level -3)
+(level -4)
+(level +1)
+(level +2)
+(level +3)
+[expanded]
+[raw data]
+[series]
+[unconfirmed]
+[corrected]
+[alpha]
+[beta]
+[conditional]
+[capabilities]
