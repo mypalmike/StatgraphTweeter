@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
+import argparse
 from PIL import Image, ImageDraw, ImageFont
 from random import choice, Random
 import re
+import sys
 import tweepy
 
 RNG = rng = Random()
@@ -103,7 +105,7 @@ class StatGrapher(object):
       self.fonts.append(ImageFont.truetype('./Verdana.ttf', font_size))
 
   def generate_text(self):
-    do_parens = (RNG.random() > 0.8)
+    do_parens = (RNG.random() > 0.75)
     if do_parens:
       self.text = '{} {} {} {}'.format(
           choice(self.words[0]),
@@ -294,31 +296,27 @@ def get_auth_api():
 
 
 def tweet(sg):
-  # auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-  # auth.secure = True
-  # auth.set_access_token(access_key, access_secret)
-  # # access the Twitter API using tweepy with OAuth
-  # api = tweepy.API(auth)
-
   auth, api = get_auth_api()
-  #getting the parameter passed via the shell command from the Arduino Sketch
-  # filename = os.path.abspath('/mnt/sda1/moneyplant.png')
-  #UpdateStatus of twitter called with the image file
   api.update_with_media('random_graph.png', status=sg.text[:139])
 
 
-def main():
+def main(argv=sys.argv):
+  parser = argparse.ArgumentParser(description='Tweet a random graph.')
+  parser.add_argument('-n', '--notweet', action='store_true', help='Generate image file, do not tweet')
+  args = parser.parse_args(argv[1:])
+
   # Twitter max image size is currently 506 x 506 pixels
   if RNG.random() > 0.9:
     # Boring words.
     sg = StatGrapher(506, 284, 'words.txt')
   else:
     # Funny words.
-    sg = StatGrapher(506, 284, 'words.txt')
+    sg = StatGrapher(506, 284, 'funwords.txt')
   sg.render()
   sg.save('random_graph.png')
 
-  tweet(sg)
+  if not args.notweet:
+    tweet(sg)
 
 
 if __name__ == '__main__':
