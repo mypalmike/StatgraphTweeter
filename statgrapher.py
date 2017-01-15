@@ -266,7 +266,7 @@ class StatGrapher(object):
     self.verticals()
     self.horizontals()
     n_parabolas = RNG.randint(0,2)
-    n_bends = 2 # RNG.randint(0,2)
+    n_bends = RNG.randint(0,2)
     n_lines = RNG.randint(0,3)
     if n_parabolas + n_bends + n_lines == 0:
       n_lines = RNG.randint(2,4)
